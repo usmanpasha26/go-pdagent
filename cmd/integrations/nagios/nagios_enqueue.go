@@ -46,11 +46,11 @@ var requiredFields = map[string][]string{
 	"host":    {"HOSTNAME", "HOSTSTATE"},
 	"service": {"HOSTNAME", "SERVICEDESC", "SERVICESTATE"},
 }
-
+//Case for the event type in nagios/icinga2 
 var nagiosToPagerDutyEventType = map[string]string{
-	"PROBLEM":         "trigger",
-	"ACKNOWLEDGEMENT": "acknowledge",
-	"RECOVERY":        "resolve",
+	"Problem":         "trigger",
+	"Acknowlegdement": "acknowledge",
+	"Recovery":        "resolve",
 }
 
 func NewNagiosEnqueueCmd(config *cmdutil.Config) *cobra.Command {
